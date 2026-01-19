@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HALIM // RIALO PLAYER</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Pixel Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --base: #e8e3d5;
+      --accent: #a9ddd3;
+      --text: #010101;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Press Start 2P", monospace;
+      background: var(--base);
+      color: var(--text);
+    }
+
+    .screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .window {
+      width: 100%;
+      max-width: 860px;
+      background: var(--base);
+      border: 4px solid var(--text);
+      box-shadow: 8px 8px 0 var(--text);
+    }
+
+    .title-bar {
+      background: var(--accent);
+      border-bottom: 4px solid var(--text);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .title-bar span {
+      font-size: 12px;
+    }
+
+    .content {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 24px;
+    }
+
+    .avatar-box {
+      border: 4px solid var(--text);
+      background: var(--accent);
+      padding: 8px;
+    }
+
+    .avatar-box img {
+      width: 100%;
+      image-rendering: pixelated;
+      border: 4px solid var(--text);
+      background: var(--base);
+    }
+
+    .stats {
+      border: 4px solid var(--text);
+      padding: 16px;
+    }
+
+    .stats h1 {
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .stats p {
+      font-size: 10px;
+      line-height: 1.8;
+      margin: 0 0 8px;
+    }
+
+    .links {
+      margin-top: 16px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .links a {
+      text-decoration: none;
+      color: var(--text);
+      border: 4px solid var(--text);
+      background: var(--accent);
+      padding: 10px;
+      font-size: 10px;
+      text-align: center;
+      box-shadow: 4px 4px 0 var(--text);
+    }
+
+    .links a:hover {
+      transform: translate(2px, 2px);
+      box-shadow: 2px 2px 0 var(--text);
+    }
+
+    .footer {
+      border-top: 4px solid var(--text);
+      padding: 12px;
+      text-align: center;
+      font-size: 9px;
+      background: var(--base);
+    }
+
+    @media (max-width: 720px) {
+      .content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="screen">
+    <div class="window">
+
+      <div class="title-bar">
+        <span>🎮 RIALO SYSTEM :: PLAYER PROFILE</span>
+      </div>
+
+      <div class="content">
+
+        <!-- PROFILE IMAGE -->
+        <div class="avatar-box">
+          <!-- GANTI FILE INI DENGAN FOTO KAMU -->
+          <img src="profile.jpg" alt="Halim Profile" />
+        </div>
+
+        <!-- INFO -->
+        <div class="stats">
+          <h1>HALIM // PLAYER ONE</h1>
+
+          <p>CLASS : WEB3 FRONTEND ENGINEER</p>
+          <p>FACTION : RIALO</p>
+          <p>ROLE : DEX UI BUILDER</p>
+          <p>MISSION : REAL WORLD BLOCKCHAIN</p>
+          <p>STATUS : ACTIVE</p>
+
+          <div class="links">
+            <a href="https://www.rialo.my.id" target="_blank">🌍 ENTER RIALO WORLD</a>
+            <a href="https://x.com/feelanzr" target="_blank">🐦 X / TWITTER</a>
+            <a href="mailto:halim.totake@gmail.com">📩 CONTACT PLAYER</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer">
+        PRESS START · BUILD · DEPLOY · REPEAT
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
