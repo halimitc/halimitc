@@ -25,15 +25,3 @@ SPECIALITY  : DEX UI • BLOCKCHAIN UX • MARKET DATA
 OBJECTIVE  : BUILD REAL-WORLD BLOCKCHAIN INTERFACES
 STATUS     : ACTIVE
 
-[ UI / UX ]
-█ Next.js        █ React
-█ TypeScript    █ Tailwind CSS
-
-[ WEB3 ]
-█ Wallet UX     █ Token Market Data
-█ DEX Interface █ Real-World Blockchain UX
-
-[ TOOLING ]
-█ Vercel        █ GitHub
-█ API Handling  █ Component Design
-
