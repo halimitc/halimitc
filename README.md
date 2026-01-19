@@ -1,27 +1,24 @@
-<!-- ===================================================== -->
-<!-- ============ PIXEL RETRO · RIALO PROFILE ============ -->
-<!-- ===================================================== -->
+# 👾 halimitc
 
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Press+Start+2P&size=14&pause=1000&color=010101&background=e8e3d5&center=true&vCenter=true&width=840&lines=HALIM+//+PLAYER+ONE;WEB3+FRONTEND+ENGINEER;RIALO+DEX+UI+BUILDER;REAL+WORLD+BLOCKCHAIN;PRESS+START+TO+CONTINUE" />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/WORLD-RIALO-%23a9ddd3?style=for-the-badge&labelColor=%23010101" />
-  <img src="https://img.shields.io/badge/MODE-BUILDING-%23e8e3d5?style=for-the-badge&labelColor=%23010101" />
-  <img src="https://img.shields.io/badge/THEME-PIXEL_RETRO-%23a9ddd3?style=for-the-badge&labelColor=%23010101" />
-</p>
+🌌 **Web3 • Crypto • Astronomi**  
+🛸 Building in public
 
 ---
 
-## 🕹️ PLAYER INFO
+## 🔗 Portfolio (Interactive)
+Kunjungi portofolio interaktif saya:
 
-```txt
-NAME        : HALIM
-HANDLE      : halimitc
-CLASS       : WEB3 LEARNER
-FACTION     : RIALO
-SPECIALITY  : DEX UI • BLOCKCHAIN UX • MARKET DATA
-OBJECTIVE  : BUILD REAL-WORLD BLOCKCHAIN INTERFACES
-STATUS     : ACTIVE
+👉 https://halimitc.github.io
 
+---
+
+## 📌 Highlights
+- Web3 dashboard
+- NFT minting
+- Trading bot
+
+---
+
+## 📫 Connect
+- Twitter: https://x.com/feelanzr
+- Instagram: https://www.rialo.my.id/
