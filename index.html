@@ -1,172 +1,352 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>HALIM // RIALO PLAYER</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GitHub Profile Portfolio (Pixel + Rialo Theme)</title>
+<style>
+  :root{
+    --base:#e8e3d5;
+    --accent:#a9ddd3;
+    --text:#010101;
+    --bg:#0b0b0b;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Press Start 2P", monospace;
+    background: radial-gradient(circle at 20% 10%, #1b1b1b 0%, #070707 60%, #000000 100%);
+    color: var(--text);
+  }
+  .container{
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 28px 18px 40px;
+  }
+  .card{
+    background: linear-gradient(180deg, rgba(232,227,213,.92), rgba(232,227,213,.78));
+    border: 2px solid var(--accent);
+    border-radius: 18px;
+    padding: 18px;
+    box-shadow: 0 12px 28px rgba(0,0,0,.35);
+  }
+  .header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+  .title{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+  .avatar{
+    width: 64px; height:64px;
+    border-radius: 14px;
+    border: 3px solid var(--accent);
+    background: linear-gradient(135deg, var(--accent), #ffffff);
+  }
+  h1{
+    margin:0;
+    font-size: 22px;
+    letter-spacing: .5px;
+  }
+  .subtitle{
+    margin:0;
+    font-size: 11px;
+    opacity:.85;
+  }
+  .chip{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 2px solid var(--accent);
+    background: rgba(1,1,1,.9);
+    color: var(--base);
+    font-size: 11px;
+  }
+  .chip .dot{
+    width:8px; height:8px; border-radius:50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 2px rgba(169,221,211,.35);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+  }
+  .panel{
+    border:2px solid var(--accent);
+    border-radius: 16px;
+    background: rgba(255,255,255,.55);
+    padding: 14px;
+  }
+  .panel h2{
+    margin:0 0 10px;
+    font-size: 12px;
+  }
+  .project{
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 2px dashed rgba(1,1,1,.25);
+    border-radius: 12px;
+    background: rgba(255,255,255,.35);
+  }
+  .project a{
+    color: var(--text);
+    text-decoration:none;
+    font-weight:700;
+  }
+  .project p{
+    margin:6px 0 0;
+    font-size: 10px;
+    opacity:.85;
+  }
+  .stats{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .stat{
+    padding: 12px;
+    border-radius: 14px;
+    border:2px solid var(--accent);
+    background: rgba(1,1,1,.6);
+    color: var(--base);
+    position:relative;
+    overflow:hidden;
+  }
+  .stat::after{
+    content:"";
+    position:absolute;
+    inset:-2px;
+    background: radial-gradient(circle at 20% 20%, rgba(169,221,211,.35), transparent 55%);
+    pointer-events:none;
+  }
+  .stat .label{
+    font-size: 10px;
+    opacity:.9;
+  }
+  .stat .value{
+    font-size: 18px;
+    font-weight:700;
+    margin-top:6px;
+  }
+  .graph{
+    height: 130px;
+    border-radius: 14px;
+    border:2px solid var(--accent);
+    background: rgba(255,255,255,.55);
+    padding: 10px;
+  }
+  canvas{
+    width:100%;
+    height:100%;
+    display:block;
+  }
+  .footer{
+    margin-top: 14px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .links{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+  }
+  .link{
+    padding: 8px 10px;
+    border-radius: 999px;
+    border:2px solid var(--accent);
+    background: rgba(1,1,1,.85);
+    color: var(--base);
+    font-size: 11px;
+    text-decoration:none;
+  }
+  .clock{
+    padding: 10px 12px;
+    border-radius: 16px;
+    border:2px solid var(--accent);
+    background: rgba(1,1,1,.85);
+    color: var(--base);
+    font-size: 12px;
+    text-align:right;
+    min-width: 210px;
+  }
+  .clock .time{
+    font-size: 18px;
+    font-weight:700;
+  }
+  .clock .date{
+    font-size: 10px;
+    opacity:.85;
+    margin-top:4px;
+  }
 
-  <!-- Pixel Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --base: #e8e3d5;
-      --accent: #a9ddd3;
-      --text: #010101;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Press Start 2P", monospace;
-      background: var(--base);
-      color: var(--text);
-    }
-
-    .screen {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-    }
-
-    .window {
-      width: 100%;
-      max-width: 860px;
-      background: var(--base);
-      border: 4px solid var(--text);
-      box-shadow: 8px 8px 0 var(--text);
-    }
-
-    .title-bar {
-      background: var(--accent);
-      border-bottom: 4px solid var(--text);
-      padding: 12px;
-      text-align: center;
-    }
-
-    .title-bar span {
-      font-size: 12px;
-    }
-
-    .content {
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 24px;
-    }
-
-    .avatar-box {
-      border: 4px solid var(--text);
-      background: var(--accent);
-      padding: 8px;
-    }
-
-    .avatar-box img {
-      width: 100%;
-      image-rendering: pixelated;
-      border: 4px solid var(--text);
-      background: var(--base);
-    }
-
-    .stats {
-      border: 4px solid var(--text);
-      padding: 16px;
-    }
-
-    .stats h1 {
-      font-size: 14px;
-      margin-bottom: 16px;
-    }
-
-    .stats p {
-      font-size: 10px;
-      line-height: 1.8;
-      margin: 0 0 8px;
-    }
-
-    .links {
-      margin-top: 16px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .links a {
-      text-decoration: none;
-      color: var(--text);
-      border: 4px solid var(--text);
-      background: var(--accent);
-      padding: 10px;
-      font-size: 10px;
-      text-align: center;
-      box-shadow: 4px 4px 0 var(--text);
-    }
-
-    .links a:hover {
-      transform: translate(2px, 2px);
-      box-shadow: 2px 2px 0 var(--text);
-    }
-
-    .footer {
-      border-top: 4px solid var(--text);
-      padding: 12px;
-      text-align: center;
-      font-size: 9px;
-      background: var(--base);
-    }
-
-    @media (max-width: 720px) {
-      .content {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  @media (max-width: 820px){
+    .grid{grid-template-columns:1fr;}
+    .clock{min-width: auto; width:100%;}
+  }
+</style>
 </head>
-
 <body>
-  <div class="screen">
-    <div class="window">
+<div class="container">
+  <div class="card">
+    <div class="header">
+      <div class="title">
+        <div class="avatar"></div>
+        <div>
+          <h1>USERNAME — Web3 & Crypto Builder</h1>
+          <p class="subtitle">🌌 Web3 • Crypto • Astronomi • Building in public</p>
+        </div>
+      </div>
+      <div class="chip"><span class="dot"></span> Pixel Portfolio • Rialo Theme</div>
+    </div>
 
-      <div class="title-bar">
-        <span>🎮 RIALO SYSTEM :: PLAYER PROFILE</span>
+    <div class="grid">
+      <div class="panel">
+        <h2>🧰 Portfolio</h2>
+        <div class="project">
+          <a href="#">Project 1</a>
+          <p>Web3 dashboard for crypto analytics • Next.js · Ethers · Pyth</p>
+        </div>
+        <div class="project">
+          <a href="#">Project 2</a>
+          <p>NFT minting platform with royalty system • Solidity · Hardhat</p>
+        </div>
+        <div class="project">
+          <a href="#">Project 3</a>
+          <p>Trading bot for meme coin monitoring • Python · CCXT</p>
+        </div>
       </div>
 
-      <div class="content">
-
-        <!-- PROFILE IMAGE -->
-        <div class="avatar-box">
-          <!-- GANTI FILE INI DENGAN FOTO KAMU -->
-          <img src="profile.jpg" alt="Halim Profile" />
-        </div>
-
-        <!-- INFO -->
+      <div class="panel">
+        <h2>📊 Stats & Graph</h2>
         <div class="stats">
-          <h1>HALIM // PLAYER ONE</h1>
-
-          <p>CLASS : WEB3 FRONTEND ENGINEER</p>
-          <p>FACTION : RIALO</p>
-          <p>ROLE : DEX UI BUILDER</p>
-          <p>MISSION : REAL WORLD BLOCKCHAIN</p>
-          <p>STATUS : ACTIVE</p>
-
-          <div class="links">
-            <a href="https://www.rialo.my.id" target="_blank">🌍 ENTER RIALO WORLD</a>
-            <a href="https://x.com/feelanzr" target="_blank">🐦 X / TWITTER</a>
-            <a href="mailto:halim.totake@gmail.com">📩 CONTACT PLAYER</a>
+          <div class="stat">
+            <div class="label">Commits (this week)</div>
+            <div class="value" id="commits">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Top Language</div>
+            <div class="value" id="lang">—</div>
+          </div>
+          <div class="stat">
+            <div class="label">Stars</div>
+            <div class="value" id="stars">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">Followers</div>
+            <div class="value" id="followers">0</div>
           </div>
         </div>
 
+        <div class="graph">
+          <canvas id="chart"></canvas>
+        </div>
       </div>
+    </div>
 
-      <div class="footer">
-        PRESS START · BUILD · DEPLOY · REPEAT
+    <div class="footer">
+      <div class="links">
+        <a class="link" href="#">Twitter</a>
+        <a class="link" href="#">Instagram</a>
+        <a class="link" href="#">Rialo</a>
       </div>
-
+      <div class="clock">
+        <div class="time" id="time">00:00:00</div>
+        <div class="date" id="date">Day, DD MMM YYYY</div>
+      </div>
     </div>
   </div>
+</div>
+
+<script>
+  // --- Clock (digital + day/date)
+  const timeEl = document.getElementById("time");
+  const dateEl = document.getElementById("date");
+  function pad(n){ return n<10 ? "0"+n : n; }
+  function updateClock(){
+    const now = new Date();
+    const dayNames = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    const day = dayNames[now.getDay()];
+    const date = pad(now.getDate());
+    const monthNames = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+    const month = monthNames[now.getMonth()];
+    const year = now.getFullYear();
+    timeEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+    dateEl.textContent = `${day}, ${date} ${month} ${year}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+
+  // --- Fake stats (you can replace with API later)
+  const commitsEl = document.getElementById("commits");
+  const starsEl = document.getElementById("stars");
+  const followersEl = document.getElementById("followers");
+  const langEl = document.getElementById("lang");
+
+  // Demo values
+  const stats = {
+    commits: 42,
+    stars: 128,
+    followers: 74,
+    topLang: "TypeScript"
+  };
+  commitsEl.textContent = stats.commits;
+  starsEl.textContent = stats.stars;
+  followersEl.textContent = stats.followers;
+  langEl.textContent = stats.topLang;
+
+  // --- Simple pixel-style chart
+  const canvas = document.getElementById("chart");
+  const ctx = canvas.getContext("2d");
+
+  function drawChart(){
+    const w = canvas.clientWidth;
+    const h = canvas.clientHeight;
+    canvas.width = w * devicePixelRatio;
+    canvas.height = h * devicePixelRatio;
+    ctx.scale(devicePixelRatio, devicePixelRatio);
+
+    // background
+    ctx.clearRect(0,0,w,h);
+    ctx.fillStyle = "rgba(1,1,1,.35)";
+    ctx.fillRect(0,0,w,h);
+
+    // grid
+    ctx.strokeStyle = "rgba(169,221,211,.35)";
+    ctx.lineWidth = 1;
+    for(let i=0;i<=4;i++){
+      const y = 10 + i*(h-20)/4;
+      ctx.beginPath();
+      ctx.moveTo(10,y);
+      ctx.lineTo(w-10,y);
+      ctx.stroke();
+    }
+
+    // data (random demo)
+    const data = [4, 7, 5, 10, 6, 9, 8];
+    const max = Math.max(...data);
+    const barW = (w-20)/data.length - 8;
+    data.forEach((v,i)=>{
+      const x = 10 + i*((w-20)/data.length);
+      const barH = (v/max)*(h-30);
+      ctx.fillStyle = "rgba(169,221,211,.9)";
+      ctx.fillRect(x, h-10-barH, barW, barH);
+      ctx.strokeStyle = "rgba(1,1,1,.6)";
+      ctx.strokeRect(x, h-10-barH, barW, barH);
+    });
+  }
+  window.addEventListener("resize", drawChart);
+  drawChart();
+</script>
 </body>
 </html>
