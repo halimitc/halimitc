@@ -21,4 +21,4 @@ Kunjungi portofolio interaktif saya:
 
 ## 📫 Connect
 - Twitter: https://x.com/feelanzr
-- Instagram: https://www.rialo.my.id/
+- R-DEX: https://app.rialodex.xyz/
